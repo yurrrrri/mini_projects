@@ -15,6 +15,7 @@ public class Main {
 
         int winCount = 0;
         int loseCount = 0;
+        int sameCount = 0;
 
         while(true) {
             System.out.println("\n가위, 바위, 보 중 하나를 입력해주세요. (게임 종료 : X)");
@@ -26,7 +27,10 @@ public class Main {
             String[] rps = new String[]{"가위", "바위", "보"};
             String computer = rps[number];
 
-            if(user.equals(computer)) System.out.println("비겼습니다.");
+            if(user.equals(computer)) {
+                System.out.println("비겼습니다.");
+                sameCount++;
+            }
             else if(user.equals("가위")){
                 if(computer.equals("바위")) {
                     System.out.println("졌습니다...");
@@ -52,13 +56,13 @@ public class Main {
                     winCount++;
                 }
             } else {
-                System.out.println("올바른 단어를 입력해주세요. (게임 종료 : x)");
+                System.out.println("올바른 단어를 입력해주세요. (게임 종료 : X)");
             }
         }
 
-        System.out.println("========== 최종 결과 ==========");
-        System.out.println("[%s] : %d / [컴퓨터] : %d".formatted(username, winCount, loseCount));
-        System.out.println("==============================");
+        System.out.println("============== 최종 결과 ==============");
+        System.out.println("[%s] : %d / [컴퓨터] : %d (비긴 횟수 : %d)".formatted(username, winCount, loseCount, sameCount));
+        System.out.println("======================================");
         System.out.println("가위바위보 게임이 종료되었습니다.");
 
         br.close();
