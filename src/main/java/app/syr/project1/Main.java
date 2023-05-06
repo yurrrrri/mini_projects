@@ -30,8 +30,7 @@ public class Main {
             if(user.equals(computer)) {
                 System.out.println("비겼습니다.");
                 sameCount++;
-            }
-            else if(user.equals("가위")){
+            } else if(user.equals("가위")){
                 if(computer.equals("바위")) {
                     System.out.println("졌습니다...");
                     loseCount++;
