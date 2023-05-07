@@ -1,3 +1,6 @@
+/*
+가위바위보 게임
+ */
 package app.syr.project1;
 
 import java.io.BufferedReader;
