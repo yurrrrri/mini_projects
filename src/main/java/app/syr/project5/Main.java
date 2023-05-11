@@ -97,7 +97,8 @@ public class Main {
         while(true){
             System.out.println("예약할 좌석을 선택해주세요. (1 ~ 40)");
             int seat = Integer.parseInt(br.readLine());
-            if(!map.get(seat)[0].equals("")) System.out.println("이미 예약되어 있는 좌석입니다.");
+            if(seat < 1 || seat > 40) System.out.println("유효하지 않은 좌석입니다.");
+            else if(!map.get(seat)[0].equals("")) System.out.println("이미 예약되어 있는 좌석입니다.");
             else {
                 System.out.println("<< " + seat + " 번 좌석 예매 >>");
                 System.out.print("예약자 성명 : ");
